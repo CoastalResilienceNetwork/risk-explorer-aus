@@ -37,72 +37,72 @@ hr {
 	margin-bottom: 6px !important;
 }
 /* css styles for the australia restoration explorer */
-.rest-selectAHabitatWrapper{
+.risk-selectAHabitatWrapper{
 	text-align: center; margin-top: 10px;
 }
-.rest-legendWrapper{
+.risk-legendWrapper{
 	display: flex; height: 26px; width: 80%;  margin: 20px auto 0 auto; border:grey solid 1px;
 }
-.rest-legendItem{
+.risk-legendItem{
 	width: 80px; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold;
 	border-left:grey solid 1px;
 }
-.rest-resultsLabel{
+.risk-resultsLabel{
 	margin-bottom: 5px; margin-top: 20px;
 }
-.rest-resultsRadBtns{
+.risk-resultsRadBtns{
 	margin-left: 10px;
 }
-.rest-wetlandsSuitWrapper{
+.risk-wetlandsSuitWrapper{
 	margin-left: 10px;
 }
-.rest-musselsSuitWrapper{
+.risk-musselsSuitWrapper{
 	margin-left: 10px; display: none;
 }
-.rest-viewRankingText{
+.risk-viewRankingText{
 	color: #2f6384; width: 170px; margin-left: 10px; font-weight: bold; font-size: 12px;
 }
-.rest-viewRankingText:hover{
+.risk-viewRankingText:hover{
 	 cursor: pointer;
 }
-.rest-rankingThresholdText{
+.risk-rankingThresholdText{
 	display: none; color: rgba(140, 33, 48,.8); font-size: 11px; width: 90%; font-weight: bold; margin-top: -10px; 
 	font-style: italic;
 }
-.rest-viewChangeText{
+.risk-viewChangeText{
 	color: #2f6384; width: 170px; margin-left: 10px; font-weight: bold; font-size: 12px;
 }
-.rest-viewChangeText:hover{
+.risk-viewChangeText:hover{
 	 cursor: pointer;
 }
-.rest-yearLabels{
+.risk-yearLabels{
 	margin-left: 28px; 
 }
-.rest-sliderLabel{
+.risk-sliderLabel{
 	margin-top: -43px; font-size: 14px; font-weight: bold;
 }
-.rest-yearLabelsWrapper{
+.risk-yearLabelsWrapper{
 	display: flex; margin-top: 5px;
 }
-.rest-yearSliderWrapper{
+.risk-yearSliderWrapper{
 	display: flex; align-items: center; margin-left: 10px; margin-top: 42px; height: 10px;
 }
-.rest-riseLabels{
+.risk-riseLabels{
 	margin-left: 53px; 
 }
-.rest-riseLabelsWrapper{
+.risk-riseLabelsWrapper{
 	display: flex; margin-top: 5px;
 }
-.rest-riseSliderWrapper{
+.risk-riseSliderWrapper{
 	display: flex; align-items: center; margin-left: 10px; height: 10px; margin-top: 40px;
 }
-.rest-flowToggleWrapper{
+.risk-flowToggleWrapper{
 	margin-left: 10px; 
 }
-.rest-floodToggleWrapper{
+.risk-floodToggleWrapper{
 	margin-left: 10px; margin-top: 0px;
 }
-.rest-floodText{
+.risk-floodText{
 	display: none; color: rgba(140, 33, 48,.8); font-size: 11px; width: 90%; font-weight: bold; 
 	font-style: italic;
 }

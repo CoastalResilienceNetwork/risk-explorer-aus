@@ -9,11 +9,11 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 				$('#' + t.id + 'viewRankingText').on('click', function(v){
 					let text = v.currentTarget.textContent;
 					if(text == 'View Ranking Thresholds'){
-						$('.rest-rankingThresholdText').slideDown();
+						$('.risk-rankingThresholdText').slideDown();
 						$(v.currentTarget).html('Hide Ranking Thresholds')
 						$(v.currentTarget).css('color', 'rgb(140, 33, 48)')
 					}else{
-						$('.rest-rankingThresholdText').slideUp();
+						$('.risk-rankingThresholdText').slideUp();
 						$(v.currentTarget).html('View Ranking Thresholds');
 						$(v.currentTarget).css('color', '#2f6384');
 					}
@@ -21,11 +21,11 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 				$('#' + t.id + 'viewChangeText').on('click', function(v){
 					let text = v.currentTarget.textContent;
 					if(text == 'View Change Scenarios'){
-						$('.rest-floodText').slideDown();
+						$('.risk-floodText').slideDown();
 						$(v.currentTarget).html('Hide Change Scenarios')
 						$(v.currentTarget).css('color', 'rgb(140, 33, 48)')
 					}else{
-						$('.rest-floodText').slideUp();
+						$('.risk-floodText').slideUp();
 						$(v.currentTarget).html('View Change Scenarios');
 						$(v.currentTarget).css('color', '#2f6384');
 					}
