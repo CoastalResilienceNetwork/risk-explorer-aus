@@ -1,6 +1,6 @@
 {
     "css": [
-		"plugins/restoration-explorer-aus/css/main.css"
+		"plugins/risk-explorer-aus/css/main.css"
     ],
     "use": {
         "underscore": { "attach": "_" },
