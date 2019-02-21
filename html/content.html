@@ -8,21 +8,9 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
 <div class="risk-mainContentWrap" style="padding-left: 7px; margin-top: 10px;">
 
 	<div class="blueFont">
-		Coastal Resilience is a decision-support tool that incorporates the best available science and local data to enable communities and coastal managers to visualize the risks imposed by coastal hazards.
+		Risk explorer intro text
 	</div>
-
-	<div id="selectAHabitatWrapper" class="risk-selectAHabitatWrapper">
-		<!-- For Chosen options visit https://harvesthq.github.io/chosen/ -->
-		<!-- Add class chos  to select's parent -->
-		<div class="chosen-wrap">
-			<select data-placeholder="Select a habitat" id="habitatDropdown" class="chosen">
-				<option></option>
-				<option value="one">Wetlands</option>
-				<option value="two">Mussels - Coming Soon</option>
-			</select>
-		</div>
-	</div>
-
+	<!-- legend -->
 	<div id="legendWrapper" class="risk-legendWrapper">
 		<div class="risk-legendItem" style="background-color: rgb(47,85,151);">High</div>
 		<div class="risk-legendItem" style="background-color: rgb(180,199,231);"></div>
@@ -37,13 +25,25 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
 		<label class="form-component" for="a-option">
 			<input checked value="final" type="radio" id="a-option" name="risk-results">
 			<div class="check"></div>
-			<span class="form-text">Show final suitability map</span>
+			<span class="form-text">Show final Risk map</span>
 		</label>
 		<br>
 		<label class="form-component" for="b-option">
-			<input type="radio" value="individual" id="b-option" name="risk-results">
+			<input type="radio" value="combExp" id="b-option" name="risk-results">
 			<div class="check"></div>
-			<span class="form-text">Show information on individual suitability variables</span>
+			<span class="form-text">Show only combined Exposure</span>
+		</label>
+		<br>
+		<label class="form-component" for="c-option">
+			<input type="radio" value="combVul" id="c-option" name="risk-results">
+			<div class="check"></div>
+			<span class="form-text">Show only combined Vulnerability</span>
+		</label>
+		<br>
+		<label class="form-component" for="d-option">
+			<input type="radio" value="individual" id="d-option" name="risk-results">
+			<div class="check"></div>
+			<span class="form-text">Show information on individual Risk Variables</span>
 		</label>
 	</div>
 	<!-- <hr> -->
@@ -54,75 +54,54 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
 		<label class="form-component" for="suitWet1-option">
 			<input checked value="suitWet1" type="radio" id="suitWet1-option" name="risk-wetlandSuit">
 			<div class="check"></div>
-			<span class="form-text">Soil waterlog potential</span>
+			<span class="form-text">Overland Erosion</span>
 		</label>
 		<div class="risk-rankingThresholdText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
 		<br>
 		<label class="form-component" for="suitWet2-option">
 			<input type="radio" value="suitWet2" id="suitWet2-option" name="risk-wetlandSuit">
 			<div class="check"></div>
-			<span class="form-text">Proximity to existing wetlands</span>
+			<span class="form-text">Soil Waterlog Potential</span>
 		</label>
 		<div class="risk-rankingThresholdText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
 		<br>
 		<label class="form-component" for="suitWet3-option">
 			<input  value="suitWet3" type="radio" id="suitWet3-option" name="risk-wetlandSuit">
 			<div class="check"></div>
-			<span class="form-text">Proximity to protected lands</span>
+			<span class="form-text">Runoff Flood Risk</span>
 		</label>
 		<div class="risk-rankingThresholdText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
 		<br>
 		<label class="form-component" for="suitWet4-option">
 			<input type="radio" value="suitWet4" id="suitWet4-option" name="risk-wetlandSuit">
 			<div class="check"></div>
-			<span class="form-text">Potential to reduce runoff</span>
+			<span class="form-text">Coastal Flood Risk</span>
 		</label>
 		<div class="risk-rankingThresholdText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
 		<br>
 		<label class="form-component" for="suitWet5-option">
 			<input type="radio" value="suitWet5" id="suitWet5-option" name="risk-wetlandSuit">
 			<div class="check"></div>
-			<span class="form-text">Potential to accommodate coastal flooding</span>
+			<span class="form-text">Age under 5 and over 65 years</span>
+		</label>
+		<div class="risk-rankingThresholdText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+		<br>
+		<label class="form-component" for="suitWet5-option">
+			<input type="radio" value="suitWet5" id="suitWet5-option" name="risk-wetlandSuit">
+			<div class="check"></div>
+			<span class="form-text">Population Density</span>
+		</label>
+		<div class="risk-rankingThresholdText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+		<br>
+		<label class="form-component" for="suitWet5-option">
+			<input type="radio" value="suitWet5" id="suitWet5-option" name="risk-wetlandSuit">
+			<div class="check"></div>
+			<span class="form-text">Median Household Weekly Income</span>
 		</label>
 		<div class="risk-rankingThresholdText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
 	</div>
 
-	<div id="musselsSuitWrapper" class="risk-musselsSuitWrapper">
-		<label class="form-component" for="suitMus1-option">
-			<input checked value="suitMus1" type="radio" id="suitMus1-option" name="risk-musSuit">
-			<div class="check"></div>
-			<span class="form-text">Ammonium</span>
-		</label>
-		<div class="risk-rankingThresholdText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-		<br>
-		<label class="form-component" for="suitMus2-option">
-			<input type="radio" value="suitMus2" id="suitMus2-option" name="risk-musSuit">
-			<div class="check"></div>
-			<span class="form-text">Oxygen</span>
-		</label>
-		<div class="risk-rankingThresholdText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-		<br>
-		<label class="form-component" for="suitMus3-option">
-			<input checked value="suitMus3" type="radio" id="suitMus3-option" name="risk-musSuit">
-			<div class="check"></div>
-			<span class="form-text">Salinity</span>
-		</label>
-		<div class="risk-rankingThresholdText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-		<br>
-		<label class="form-component" for="suitMus4-option">
-			<input type="radio" value="suitMus4" id="suitMus4-option" name="risk-musSuit">
-			<div class="check"></div>
-			<span class="form-text">Temperature</span>
-		</label>
-		<div class="risk-rankingThresholdText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-		<br>
-		<label class="form-component" for="suitMus5-option">
-			<input type="radio" value="suitMus5" id="suitMus5-option" name="risk-musSuit">
-			<div class="check"></div>
-			<span class="form-text">Turbidity</span>
-		</label>
-		<div class="risk-rankingThresholdText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-	</div>
+	
 
 	<h4 class="risk-resultsLabel" style="margin-top: 7px;">Change coastal flood scenario.</h4>
 	<div id="viewChangeText" class="risk-viewChangeText">View Change Scenarios</div>
@@ -139,7 +118,7 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
 		</div>
 	</div>
 	<div class="risk-floodText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-	<div id="riseSliderWrapper" class="risk-riseSliderWrapper">
+	<!-- <div id="riseSliderWrapper" class="risk-riseSliderWrapper">
 		<div class="risk-sliderLabel">Sea Level Rise:</div>
 		<div class="slider-container" style="width:185px; margin-left: 30px;">
 			<div id="sldr2" class="slider"></div>
@@ -171,5 +150,5 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
 		</div>
 	</div>
 	<div class="risk-floodText" style="margin-bottom: 15px;">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-</div>
+</div> -->
 
