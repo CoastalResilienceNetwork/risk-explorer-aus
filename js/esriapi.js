@@ -8,9 +8,6 @@ function ( 	ArcGISDynamicMapServiceLayer, Extent, SpatialReference, Query, Query
 
         return declare(null, {
 			esriApiFunctions: function(t){	
-				console.log('esri functions')
-
-
 				// Add dynamic map service
 				t.dynamicLayer = new ArcGISDynamicMapServiceLayer(t.url, {opacity:0.7});
 				t.map.addLayer(t.dynamicLayer);
@@ -21,19 +18,22 @@ function ( 	ArcGISDynamicMapServiceLayer, Extent, SpatialReference, Query, Query
 				t.map.on("zoom-end", function(evt){
 					t.map.setMapCursor("pointer");
 				});
-				//For Chosen options visit https://harvesthq.github.io/chosen/
-				//Single deselect only works if the first option in the select tag is blank
-
-				$("#" + t.id + "habitatDropdown").chosen({allow_single_deselect:true,"disable_search": true, width:"200px"})
-					.change(function(c){
-						// var v = c.target.value;
-						// // check for a deselect
-						// if (v.length == 0){
-						// 	v = "none";
-						// }
-						// $('#' + c.target.id ).parent().next().find("span").html(v)
+				t.dynamicLayer.on("load", function () {
+					t.map.setExtent(t.dynamicLayer.fullExtent.expand(1.2), true)
+					// get layers array, set extent, change map cursor 			
+					t.layersArray = t.dynamicLayer.layerInfos;
+					t.map.setMapCursor("pointer");
+					t.map.on("zoom-end", function(evt){
+						t.map.setMapCursor("pointer");
 					});
 
+					// build a name layers array
+					t.layersNameArray = []
+					$.each(t.layersArray, function(i,v){
+						t.layersNameArray.push(v.name);
+					})
+				});
+				
 				$(function() {
 				  $("#" + t.id + "sldr").slider({ min: 1, max: 4, range: false, })
 				    // .slider("pips", { rest: "label"})

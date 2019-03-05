@@ -8,10 +8,11 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
 <div class="risk-mainContentWrap" style="padding-left: 7px; margin-top: 10px;">
 
 	<div class="blueFont">
-		Risk explorer intro text
+		This app can be used to explore coastal and inland flood risk now and into the future to support mitigation and adaptation planning.
 	</div>
 	<!-- legend -->
 	<div id="legendWrapper" class="risk-legendWrapper">
+		
 		<div class="risk-legendItem" style="background-color: rgb(47,85,151);">Low</div>
 		<div class="risk-legendItem" style="background-color: rgb(180,199,231);"></div>
 		<div class="risk-legendItem" style="background-color: rgb(250,247,110);"></div>
@@ -51,73 +52,78 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
 	<div id="viewRankingText" class="risk-viewRankingText">View Ranking Thresholds</div>
 
 	<div id="wetlandsSuitWrapper" class="risk-wetlandsSuitWrapper">
-		<label class="form-component" for="suitWet1-option">
-			<input checked value="suitWet1" type="radio" id="suitWet1-option" name="risk-wetlandSuit">
-			<div class="check"></div>
-			<span class="form-text">Overland Erosion</span>
-		</label>
-		<div class="risk-rankingThresholdText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-		<br>
-		<label class="form-component" for="suitWet2-option">
-			<input type="radio" value="suitWet2" id="suitWet2-option" name="risk-wetlandSuit">
-			<div class="check"></div>
-			<span class="form-text">Soil Waterlog Potential</span>
-		</label>
-		<div class="risk-rankingThresholdText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-		<br>
-		<label class="form-component" for="suitWet3-option">
-			<input  value="suitWet3" type="radio" id="suitWet3-option" name="risk-wetlandSuit">
-			<div class="check"></div>
-			<span class="form-text">Runoff Flood Risk</span>
-		</label>
-		<div class="risk-rankingThresholdText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-		<br>
-		<label class="form-component" for="suitWet4-option">
-			<input type="radio" value="suitWet4" id="suitWet4-option" name="risk-wetlandSuit">
-			<div class="check"></div>
-			<span class="form-text">Coastal Flood Risk</span>
-		</label>
-		<div class="risk-rankingThresholdText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-		<br>
-		<label class="form-component" for="suitWet5-option">
-			<input type="radio" value="suitWet5" id="suitWet5-option" name="risk-wetlandSuit">
+		<label class="form-component" for="suitWet8-option">
+			<input disabled checked type="radio" value="Age_Ras" id="suitWet8-option" name="risk-wetlandSuit">
 			<div class="check"></div>
 			<span class="form-text">Age under 5 and over 65 years</span>
 		</label>
-		<div class="risk-rankingThresholdText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+		<div class="risk-rankingThresholdText">Percentage of the population within a census block that are likely dependent on others during a flood event. Based on 2011 Census. High is >50%, Medium is 25 -50%, and Low is 0 – 25%.</div>
 		<br>
-		<label class="form-component" for="suitWet5-option">
-			<input type="radio" value="suitWet5" id="suitWet5-option" name="risk-wetlandSuit">
+		<label class="form-component" for="suitWet7-option">
+			<input disabled type="radio" value="Pop_Dens_Ras" id="suitWet7-option" name="risk-wetlandSuit">
 			<div class="check"></div>
 			<span class="form-text">Population Density</span>
 		</label>
-		<div class="risk-rankingThresholdText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+		<div class="risk-rankingThresholdText">High concentrations of population within a flood risk area are places where floods could impact the most people if not mitigated. Based on 2020 gridded population of the world, where quantiles High is > 200, Medium is 40-200, and Low is <40 </div>
 		<br>
-		<label class="form-component" for="suitWet5-option">
-			<input type="radio" value="suitWet5" id="suitWet5-option" name="risk-wetlandSuit">
+		<label class="form-component" for="suitWet6-option">
+			<input disabled type="radio" value="HH_Income_Ras" id="suitWet6-option" name="risk-wetlandSuit">
 			<div class="check"></div>
 			<span class="form-text">Median Household Weekly Income</span>
 		</label>
-		<div class="risk-rankingThresholdText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+		<div class="risk-rankingThresholdText">Lower income households may lack the resources to protect themselves from a flood event and are less resilient to recover. Based on 2011 Census where High is <= 30th percentile, Medium is 40-70th percentile, and Low is > 70th percentile.</div>
+		<br>
+		<label class="form-component" for="suitWet1-option">
+			<input disabled value="PctWaterErosion_Ras" type="radio" id="suitWet1-option" name="risk-wetlandSuit">
+			<div class="check"></div>
+			<span class="form-text">Overland Erosion</span>
+		</label>
+		<div class="risk-rankingThresholdText">Land with high inherent susceptibility to erode from surface water movement. Derived from land quality associated with soil-landscape by the Dept of Agriculture. High is >= 50%, Medium is 10-50%, and Low is <=10%</div>
+		<br>
+		<label class="form-component" for="suitWet2-option">
+			<input disabled type="radio" value="PctWaterLog_Ras" id="suitWet2-option" name="risk-wetlandSuit">
+			<div class="check"></div>
+			<span class="form-text">Soil Waterlog Potential</span>
+		</label>
+		<div class="risk-rankingThresholdText">Land with high inherent susceptibility for excess surface water to pond based on average seasonal rainfall, from the Dept of Agriculture. High is >= 50%, Medium is 10-50%, and Low is <=10%</div>
+		<br>
+		<label class="form-component" for="suitWet3-option">
+			<input disabled  value="PctFloodRisk_Ras" type="radio" id="suitWet3-option" name="risk-wetlandSuit">
+			<div class="check"></div>
+			<span class="form-text">Runoff Flood Risk</span>
+		</label>
+		<div class="risk-rankingThresholdText">Land with high inherent susceptibility to flood due to overflowing streams and/or precipitation run off, from the Dept of Agriculture. High is >= 50%, Medium is 10-50%, and Low is <=10%</div>
+		<br>
+		<label class="form-component" for="suitWet4-option">
+			<input disabled type="radio" value="coastalFlood" id="suitWet4-option" name="risk-wetlandSuit">
+			<div class="check"></div>
+			<span class="form-text">Coastal Flood Risk</span>
+		</label>
+		<div class="risk-rankingThresholdText">Estuarine land near projected flood extents is at highest risk of future flooding as sea levels rise. High = Within 500m of flood extent, Medium is within 500-1,000m, and Low is within 1,000-1,500m.</div>
 	</div>
 
 	
-
-	<h4 class="risk-resultsLabel" style="margin-top: 7px;">Change coastal flood scenario.</h4>
-	<div id="viewChangeText" class="risk-viewChangeText">View Change Scenarios</div>
-	<div id="yearSliderWrapper" class="risk-yearSliderWrapper">
-		<div class="risk-sliderLabel">Water Rise:</div>
-		<div class="slider-container" style="width:185px; margin-left: 30px;">
-			<div id="sldr" class="slider"></div>
-			<div class="risk-yearLabelsWrapper">
-				<div class="risk-yearLabels" style="margin-left: -14px;">0.5m</div>
-				<div class="risk-yearLabels">0.8m</div>
-				<div class="risk-yearLabels">1.1m</div>
-				<div class="risk-yearLabels">1.5m</div>
+	<div class="risk-waterRiseWrapper">
+		<h4 class="risk-resultsLabel" style="margin-top: 7px;">Change coastal flood scenario.</h4>
+		<!-- <div id="viewChangeText" class="risk-viewChangeText">View Change Scenarios</div> -->
+		<div id="yearSliderWrapper" class="risk-yearSliderWrapper">
+			<div class="risk-sliderLabel">Water Rise:</div>
+			<div class="slider-container" style="width:185px; margin-left: 30px;">
+				<div id="sldr" class="slider"></div>
+				<div class="risk-yearLabelsWrapper">
+					<div class="risk-yearLabels" style="margin-left: -14px;">0.5m</div>
+					<div class="risk-yearLabels">0.8m</div>
+					<div class="risk-yearLabels">1.1m</div>
+					<div class="risk-yearLabels">1.5m</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	<div class="risk-floodText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+	
+	<!-- <div class="risk-floodText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div> -->
+
+
+
 	<!-- <div id="riseSliderWrapper" class="risk-riseSliderWrapper">
 		<div class="risk-sliderLabel">Sea Level Rise:</div>
 		<div class="slider-container" style="width:185px; margin-left: 30px;">
