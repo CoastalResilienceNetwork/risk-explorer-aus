@@ -25,7 +25,6 @@ function ( 	ArcGISDynamicMapServiceLayer, Extent, SpatialReference, Query, Query
 
 						// figure out which main radio button needs to be checked
 						$.each($('.risk-resultsRadBtns input'), function(i,v){
-							console.log(v.value, t.obj.viewResultsTracker)
 							if(v.value == t.obj.viewResultsTracker){
 								$(v).attr('checked', true);
 							}else{
@@ -56,13 +55,13 @@ function ( 	ArcGISDynamicMapServiceLayer, Extent, SpatialReference, Query, Query
 							}else{
 								$('.risk-waterRiseWrapper').slideUp()
 							}
-						}else if(t.obj.viewResultsTracker == 'compExp'){
+						}else if(t.obj.viewResultsTracker == 'combExp'){
 							$('.risk-waterRiseWrapper').slideUp()
-							
+
 							$.each($('.risk-wetlandsSuitWrapper input'), function(i,v){
 								$(v).attr('disabled', true)
 							})
-						}else if(t.obj.viewResultsTracker == 'compVul'){
+						}else if(t.obj.viewResultsTracker == 'combVul'){
 							$('.risk-waterRiseWrapper').slideUp()
 
 							$.each($('.risk-wetlandsSuitWrapper input'), function(i,v){
@@ -103,7 +102,7 @@ function ( 	ArcGISDynamicMapServiceLayer, Extent, SpatialReference, Query, Query
 				});
 
 				$(function() {
-				  $("#" + t.id + "sldr").slider({ min: 1, max: 4, range: false, })
+				  $("#" + t.id + "sldr").slider({ min: 1, max: 4, range: false, values:[t.obj.waterRiseVal] })
 				    // .slider("pips", { rest: "label"})
 				    // .slider("float");
 				});
