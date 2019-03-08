@@ -19,7 +19,66 @@ function ( 	ArcGISDynamicMapServiceLayer, Extent, SpatialReference, Query, Query
 					t.map.setMapCursor("pointer");
 				});
 				t.dynamicLayer.on("load", function () {
-					t.map.setExtent(t.dynamicLayer.fullExtent.expand(1.2), true)
+					// if save and share
+					if(t.obj.stateSet == 'yes'){
+						t.dynamicLayer.setOpacity(t.obj.opacitySliderVal/100);
+
+						// figure out which main radio button needs to be checked
+						$.each($('.risk-resultsRadBtns input'), function(i,v){
+							console.log(v.value, t.obj.viewResultsTracker)
+							if(v.value == t.obj.viewResultsTracker){
+								$(v).attr('checked', true);
+							}else{
+								$(v).attr('checked', false);
+							}
+						})
+						// find out which wetlands radio button needs to be checked
+						$.each($('.risk-wetlandsSuitWrapper input'), function(i,v){
+							if(v.value == t.obj.wetlandVal){
+								$(v).attr('checked', true);
+							}else{
+								$(v).attr('checked', false);
+							}
+						})
+						// handle when the individula rad buttons are disabled
+						if(t.obj.viewResultsTracker == 'final'){
+							$.each($('.risk-wetlandsSuitWrapper input'), function(i,v){
+								$(v).attr('disabled', true)
+							})
+							$('.risk-waterRiseWrapper').slideDown()
+
+						}else if(t.obj.viewResultsTracker == 'individual'){
+							$.each($('.risk-wetlandsSuitWrapper input'), function(i,v){
+								$(v).attr('disabled', false)
+							})
+							if(t.obj.wetlandVal == 'coastalFlood'){
+								$('.risk-waterRiseWrapper').slideDown()
+							}else{
+								$('.risk-waterRiseWrapper').slideUp()
+							}
+						}else if(t.obj.viewResultsTracker == 'compExp'){
+							$('.risk-waterRiseWrapper').slideUp()
+							
+							$.each($('.risk-wetlandsSuitWrapper input'), function(i,v){
+								$(v).attr('disabled', true)
+							})
+						}else if(t.obj.viewResultsTracker == 'compVul'){
+							$('.risk-waterRiseWrapper').slideUp()
+
+							$.each($('.risk-wetlandsSuitWrapper input'), function(i,v){
+								$(v).attr('disabled', true)
+							})
+						}
+
+
+
+					}else{
+						t.map.setExtent(t.dynamicLayer.fullExtent.expand(1.2), true)
+					}
+
+
+
+					
 					// get layers array, set extent, change map cursor 			
 					t.layersArray = t.dynamicLayer.layerInfos;
 					t.map.setMapCursor("pointer");
@@ -33,7 +92,16 @@ function ( 	ArcGISDynamicMapServiceLayer, Extent, SpatialReference, Query, Query
 						t.layersNameArray.push(v.name);
 					})
 				});
-				
+				// opacity slider
+				$(function() {
+				    $("#" + t.id + "opacity-slider").slider({ min: 1, max: 100, range: false, values:[t.obj.opacitySliderVal] })
+				    // on opacity slide
+				    $("#" + t.id + "opacity-slider").on('slide', function(v,ui){
+				    	t.obj.opacitySliderVal = ui.value
+				  		t.dynamicLayer.setOpacity(ui.value/100); // set init opacity
+				    })
+				});
+
 				$(function() {
 				  $("#" + t.id + "sldr").slider({ min: 1, max: 4, range: false, })
 				    // .slider("pips", { rest: "label"})

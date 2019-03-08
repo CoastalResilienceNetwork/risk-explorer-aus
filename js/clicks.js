@@ -6,10 +6,6 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 
         return declare(null, {
 			eventListeners: function(t){
-				t.obj.waterRiseVal = 1
-				t.obj.wetlandVal = 'Age_Ras';
-				t.obj.viewResultsTracker = 'final'
-
 				$('#' + t.id + 'viewRankingText').on('click', function(v){
 					let text = v.currentTarget.textContent;
 					if(text == 'View Ranking Thresholds'){
