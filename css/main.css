@@ -27,96 +27,93 @@
 .sidebar-content .getHelpBtnWrap .button{
 	margin-bottom:0;
 }
-.aus-wrap .slider{
-	margin-left:30px;
+.chosen-container-single .chosen-drop{
+	margin-top: 0px !important;
 }
-.aus-wrap{
-	display: none;
+hr {
+    box-sizing: content-box; height: 0; overflow: visible; width: 90%; margin-left: 15px; border-color: rgba(0,0,0,.2);
 }
-.aus-sections{
-	position: relative; top: 100px; padding: 10px;
+.form-component{
+	margin-bottom: 6px !important;
 }
-.aus-mainContentWrap{
-	padding-left: 7px; 
+/* css styles for the australia restoration explorer */
+.risk-selectAHabitatWrapper{
+	text-align: center; margin-top: 10px;
 }
-.aus-first-section .toggle-btn{
-	margin-top:-10px;	
+.risk-legendWrapper{
+	display: flex; height: 26px; width: 80%;  margin: 20px auto 0 auto; border:grey solid 1px;
 }
-.under{
-	text-decoration:underline;
+.risk-legendItem{
+	width: 80px; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold;
+	border-left:grey solid 1px;
 }
-/* fix the accordion height issue in Safari //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-.sidebar-content{
-	height:auto !important;
+.risk-resultsLabel{
+	margin-bottom: 5px; margin-top: 20px;
 }
-.aus-count-font{
-	color:#2f6384; text-align:center; margin-top:-5px; margin-bottom:-10px;
+.risk-resultsRadBtns{
+	margin-left: 10px;
 }
-.slider-container .ui-state-disabled {
-    cursor: not-allowed !important;
+.risk-wetlandsSuitWrapper{
+	margin-left: 10px;
 }
-.aus-slider-label{
-	display:none; margin-left:-8px;
+.risk-musselsSuitWrapper{
+	margin-left: 10px; display: none;
 }
-.aus-radio-indent{
-	margin-left:22px;
+.risk-viewRankingText{
+	color: #2f6384; width: 170px; margin-left: 10px; font-weight: bold; font-size: 12px;
 }
-.aus-grth{
-	display:none; color: #2f6384; font-weight: 700;
+.risk-viewRankingText:hover{
+	 cursor: pointer;
 }
-.aus-shosu{
-	position:absolute; top:94px; right:3px;
+.risk-rankingThresholdText{
+	display: none; color: rgba(140, 33, 48,.8); font-size: 11px; width: 90%; font-weight: bold; margin-top: -4px; 
+	font-style: italic;
 }
-/* HUC dropdown styling area ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-.aus-huc8Chosen, .aus-huc10Chosen, .aus-huc12Chosen{
-	display: none;
+.risk-viewChangeText{
+	color: #2f6384; width: 170px; margin-left: 10px; font-weight: bold; font-size: 12px;
 }
-/*.aus-huc6Text, .aus-huc8Text, .aus-huc10Text, .aus-huc12Text{
-	display: none;
-}*/
-.aus-hucSelText{
-	margin: 10px;
+.risk-viewChangeText:hover{
+	 cursor: pointer;
 }
-.aus-backBtn{
-	cursor: pointer; color: #2F6384;
+.risk-yearLabels{
+	margin-left: 28px; 
 }
-/* Attribute wrap styling for select a site /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-.aus-fas_AttributeWrap{
-	margin-top: 20px; display: flex; flex-wrap: wrap; padding-bottom: 20px;
+.risk-sliderLabel{
+	margin-top: -43px; font-size: 14px; font-weight: bold;
 }
-.aus-fas_AttributeWrap div{
-	padding: 3px;
+.risk-yearLabelsWrapper{
+	display: flex; margin-top: 5px;
 }
-.aus-sum-wrap {
-    width: 150px; margin: 3px; border: 1pt solid #cdd5d5; padding: 5px; box-shadow: 0 1px 1px rgba(16,22,26,.2); position: relative;
+.risk-yearSliderWrapper{
+	display: flex; align-items: center; margin-left: 10px; margin-top: 42px; height: 10px;
 }
-.aus-huc-wrap{
-	width: 300px; margin: 3px; border: 1pt solid #cdd5d5; padding: 5px; box-shadow: 0 1px 1px rgba(16,22,26,.2); position: relative;
+.risk-riseLabels{
+	margin-left: 53px; 
+}
+.risk-riseLabelsWrapper{
+	display: flex; margin-top: 5px;
+}
+.risk-riseSliderWrapper{
+	display: flex; align-items: center; margin-left: 10px; height: 10px; margin-top: 40px;
+}
+.risk-flowToggleWrapper{
+	margin-left: 10px; 
+}
+.risk-floodToggleWrapper{
+	margin-left: 10px; margin-top: 0px;
+}
+.risk-floodText{
+	display: none; color: rgba(140, 33, 48,.8); font-size: 11px; width: 90%; font-weight: bold; 
+	font-style: italic;
+}
+.risk-opacitySlider{
+	position: absolute; display: flex; bottom: 0px; left: 0px; align-items: center; justify-content: center; width: 100%; 
+	background-color:rgb(245,245,245); border-top: 1px solid rgba(0,0,0,.2); padding-top: 16px; z-index: 3000;
+}
 
-}
-.aus-attZoom{
-	position: absolute; top:3px; right: 3px;
-}
-.tabBtns{
-	margin-right:-6px; margin-bottom:0 !important; background:#f3f3f3; border-bottom: 1px solid #cdd5d5 !important; border-top: 1px solid #cdd5d5 !important;
-}
-.aus-funcWrapper{
-	margin-top: 20px;
-}
-.aus-app{
-	background: #fff; position: absolute; z-index: 1000; width: 420;
-}
-.aus-mainContentWrap{
-	position: relative;
-}
 
-.aus-dlwrap a {
-	color: blue !important; cursor: pointer !important;
-}
-.elm-title{
- 	color:#5E94B6; font-size: 21px;
-}
-.aus-attWrap{
-   display: flex; flex-wrap: wrap; text-align: center; margin-left: 45px;
-}
+
+
+
+
 

@@ -1,3 +1,7 @@
+// // Pull in your favorite version of jquery 
+// require({ 
+// 	packages: [{ name: "jquery", location: "http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/", main: "jquery.min" }] 
+// });
 // Bring in dojo and javascript api classes as well as varObject.json, js files, and content.html
 define([
 	"dojo/_base/declare", "framework/PluginBase", "dijit/layout/ContentPane", "dojo/dom", "dojo/dom-style", "dojo/dom-geometry", "dojo/text!./obj.json", 
@@ -6,7 +10,7 @@ define([
 function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, obj, content, esriapi, clicks, lang ) {
 	return declare(PluginBase, {
 		// The height and width are set here when an infographic is defined. When the user click Continue it rebuilds the app window with whatever you put in.
-		toolbarName: "Restoration Explorer - Beta", showServiceLayersInLegend: true, allowIdentifyWhenActive: false, rendered: false, resizable: false,
+		toolbarName: "Risk Explorer", showServiceLayersInLegend: false, allowIdentifyWhenActive: false, rendered: false, resizable: false,
 		hasCustomPrint: false, size:'custom', width:420, hasHelp:false, 
 		
 		// First function called when the user clicks the pluging icon. 
@@ -15,7 +19,7 @@ function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, obj, conte
 			declare.safeMixin(this, frameworkParameters);
 			// Define object to access global variables from JSON object. Only add variables to varObject.json that are needed by Save and Share. 
 			this.obj = dojo.eval("[" + obj + "]")[0];	
-			this.url = "https://services2.coastalresilience.org/arcgis/rest/services/Australia/Restoration_Explorer/MapServer";
+			this.url = "https://dev-services.coastalresilience.org/arcgis/rest/services/Australia/Risk_Explorer/MapServer";
 			this.layerDefs = [];
 		},
 		// Called after initialize at plugin startup (why the tests for undefined). Also called after deactivate when user closes app by clicking X. 
@@ -28,10 +32,12 @@ function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, obj, conte
 		// Called after hibernate at app startup. Calls the render function which builds the plugins elements and functions.   
 		activate: function (showHelpOnStart) {
 			if (this.rendered == false) {
+				ga('send', 'event', this.toolbarName, 'Opened app');
 				this.rendered = true;							
 				this.render();
 				$(this.printButton).hide();
 			}else{
+				ga('send', 'event', this.toolbarName, 'Re-opened app');
 				this.dynamicLayer.setVisibleLayers(this.obj.visibleLayers);
 				$('#' + this.id).parent().parent().css('display', 'flex');
 				// this.clicks.updateAccord(this);

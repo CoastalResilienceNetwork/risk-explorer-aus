@@ -3,169 +3,168 @@ Dijit ContentPane to hold all the elements. The ContentPane is assigned a dynami
 takes the ContentPane id and prepends it to every element with a declared id in this HTML before the elements are created.
 The unique ContentPane id makes all the element ids unique and prevents duplicate id errors across other apps.-->
 
-<!-- Main Content Wrapper -->
-<div class="aus-mainContentWrap" style="padding-left: 7px;">
-	<section>
-		<h2>Port Phillip and Western Port Living Shorelines </h2>
-		<p style="color: #21658c; margin-top: 5px; width: 360px; margin: auto;">
-			The Restoration Explorer allows users to identify which nature-based technique(s) could work best in reducing coastal erosion, while promoting the multiple benefits of healthy coastal habitats. It currently provides guidance on four specific living shoreline techniques: Marsh and Mangrove Enhancement, Marsh and Mangrove Enhancement with Structures, Beach Enhancement, and Living Breakwaters. Definitions are provided within the Restoration Explorer. This beta version of the Restoration Explorer was created as a demonstration of the potential for decision support tool development in the Greater Melbourne region and has not been vetted by partners.  Full documentation of the development of the beta version can be found here.
-		</p>
-	</section>
-	
 
-	<!--  -->
-	<section>
-		<div class="aus-viewRadioWrap" id="aus-viewRadioWrap" >
-			<h3>How would you like to view the results?</h3>
-			<label class="form-component aus-viewRadio" for="all-option">
-				<input type="radio" id="all-option" name="tech" value="all">
-				<div class="check"></div>
-				<span class="form-text">Show All Techniques in One Map</span>
-			</label>
-			<br>
-			<label class="form-component aus-viewRadio" for="ind-option">
-				<input type="radio" id="ind-option" name="tech" value="ind">
-				<div class="check"></div>
-				<span class="form-text">Show Information on Individual Techniques</span>
-			</label>
-		</div>
-	</section>
-	
+<!-- Main content Wrapper -->
+<div class="risk-mainContentWrap" style="padding-left: 7px; margin-top: 10px; margin-bottom: 75px;">
 
-	<!-- Function of Interest find/eval wrapper ///////////////////////////////////////////////////////////////////////////////////////// -->
-	<section class="aus-enhanceFuncWrap hide" id="aus-enhanceFuncWrap">
-		<div >
-			<h3 style="margin-top: 15px;">Select shoreline enhancement technique:</h3>
-			<div id="funcWrapper" class="aus-funcWrapper aus-radio-indent">
-				<label class="form-component" for="func1">
-					<input type="radio" id="func1" name="func" class="rb_cb" value="Marsh and Mangrove Enhancement">
-					<div class="check"></div>
-					<span class="form-text">Marsh and Mangrove Enhancement</span>
-				</label>
-				<br>
-				<label class="form-component" for="func2">
-					<input type="radio" id="func2" name="func" class="rb_cb" value="Marsh and Mangrove Enhancement with Structures">
-					<div class="check"></div>
-					<span class="form-text">Marsh and Mangrove Enhancement with Structures</span>
-				</label>
-				<br>
-				<label class="form-component" for="func3">
-					<input  type="radio" id="func3" name="func" class="rb_cb" value="Beach Enhancement">
-					<div class="check"></div>
-					<span class="form-text">Beach Enhancement</span>
-				</label>
-				<br>
-				<label class="form-component" for="func4">
-					<input  type="radio" id="func4" name="func" class="rb_cb" value="Living Breakwaters">
-					<div class="check"></div>
-					<span class="form-text">Living Breakwaters</span>
-				</label>
-		 	</div>
-		</div>
-	</section>
-	
+	<div class="blueFont">
+		This app can be used to explore coastal and inland flood risk now and into the future to support mitigation, adaptation, and restoration planning. Risk is estimated by multiplying Exposure and Vulnerability.
+	</div>
+	<!-- legend -->
+	<div id="legendWrapper" class="risk-legendWrapper">
+		
+		<div class="risk-legendItem" style="background-color: rgb(47,85,151);">Low</div>
+		<div class="risk-legendItem" style="background-color: rgb(180,199,231);"></div>
+		<div class="risk-legendItem" style="background-color: rgb(250,247,110);"></div>
+		<div class="risk-legendItem" style="background-color: rgb(235,115,33);"></div>
+		<div class="risk-legendItem" style="background-color: rgb(192,0,1);">High</div>
+	</div>
+	<!-- <hr> -->
+	<h4 class="risk-resultsLabel">How would you like to view the results?</h4>
 
-<!--  attribute display area ///////////////////////////////////////////////////////////////////// -->
-	<section>
-		<h3>View Attributes:</h3>
-		<p id="clickInst" style="color: #21658c; font-size: 15px;">Click data on map to select cells</p>
-		<div id="aus-attWrap" class="hide">
-			<div class="aus-attWrap">
-				<div class="aus-sum-wrap">
-					<div id="attExp" class="elm-title">High</div>
-					<div class="elm-results">
-						Exposure
-					</div>
-				</div>
-				<div class="aus-sum-wrap">
-					<div id="attSlope" class="elm-title">Low</div>
-					<div class="elm-results">
-						Slope
-					</div>
-				</div>
-				<br>
-				<div class="aus-sum-wrap">
-					<div id="attMM" class="elm-title">Present</div>
-					<div class="elm-results">
-						Marsh and/or Mangrove Presence
-					</div>
-				</div>
-				<div class="aus-sum-wrap">
-					<div id="attBP" class="elm-title">Not Present</div>
-					<div class="elm-results">
-						Beach Presence
-					</div>
+	<div class="risk-resultsRadBtns">
+		<label class="form-component" for="a-option">
+			<input checked value="final" type="radio" id="a-option" name="risk-results">
+			<div class="check"></div>
+			<span class="form-text">Show final Risk map</span>
+		</label>
+		<br>
+		<label class="form-component" for="b-option">
+			<input type="radio" value="combExp" id="b-option" name="risk-results">
+			<div class="check"></div>
+			<span class="form-text">Show only combined Exposure</span>
+		</label>
+		<br>
+		<label class="form-component" for="c-option">
+			<input type="radio" value="combVul" id="c-option" name="risk-results">
+			<div class="check"></div>
+			<span class="form-text">Show only combined Vulnerability</span>
+		</label>
+		<br>
+		<label class="form-component" for="d-option">
+			<input type="radio" value="individual" id="d-option" name="risk-results">
+			<div class="check"></div>
+			<span class="form-text">Show information on individual Risk Variables</span>
+		</label>
+	</div>
+	<!-- <hr> -->
+	<h4 class="risk-resultsLabel" style="margin-top: 7px;">Select a suitability variable to view.</h4>
+	<div id="viewRankingText" class="risk-viewRankingText">View Ranking Thresholds</div>
+
+	<div id="wetlandsSuitWrapper" class="risk-wetlandsSuitWrapper">
+		<label class="form-component" for="suitWet8-option">
+			<input disabled checked type="radio" value="Age_Ras" id="suitWet8-option" name="risk-wetlandSuit">
+			<div class="check"></div>
+			<span class="form-text">Age under 5 and over 65 years</span>
+		</label>
+		<div class="risk-rankingThresholdText">Percentage of the population within a census block that are likely dependent on others during a flood event. Based on 2011 Census. High is >50%, Medium is 25 -50%, and Low is 0 – 25%.</div>
+		<br>
+		<label class="form-component" for="suitWet7-option">
+			<input disabled type="radio" value="Pop_Dens_Ras" id="suitWet7-option" name="risk-wetlandSuit">
+			<div class="check"></div>
+			<span class="form-text">Population Density</span>
+		</label>
+		<div class="risk-rankingThresholdText">High concentrations of population within a flood risk area are places where floods could impact the most people if not mitigated. Based on 2020 gridded population of the world, where quantiles High is > 200, Medium is 40-200, and Low is <40 </div>
+		<br>
+		<label class="form-component" for="suitWet6-option">
+			<input disabled type="radio" value="HH_Income_Ras" id="suitWet6-option" name="risk-wetlandSuit">
+			<div class="check"></div>
+			<span class="form-text">Median Household Weekly Income</span>
+		</label>
+		<div class="risk-rankingThresholdText">Lower income households may lack the resources to protect themselves from a flood event and may need recovery assistance. Based on 2011 Census where High is <= 30th percentile, Medium is 40-70th percentile, and Low is > 70th percentile.</div>
+		<br>
+		<label class="form-component" for="suitWet1-option">
+			<input disabled value="PctWaterErosion_Ras" type="radio" id="suitWet1-option" name="risk-wetlandSuit">
+			<div class="check"></div>
+			<span class="form-text">Overland Erosion</span>
+		</label>
+		<div class="risk-rankingThresholdText">Land with high susceptibility to erode from surface water movement. Derived from land quality associated with soil-landscape by the Dept of Agriculture. High is >= 50%, Medium is 10-50%, and Low is <=10%</div>
+		<br>
+		<label class="form-component" for="suitWet2-option">
+			<input disabled type="radio" value="PctWaterLog_Ras" id="suitWet2-option" name="risk-wetlandSuit">
+			<div class="check"></div>
+			<span class="form-text">Soil Waterlog Potential</span>
+		</label>
+		<div class="risk-rankingThresholdText">Land with high susceptibility for excess surface water to pond based on average seasonal rainfall, from the Dept of Agriculture. High is >= 50%, Medium is 10-50%, and Low is <=10%</div>
+		<br>
+		<label class="form-component" for="suitWet3-option">
+			<input disabled  value="PctFloodRisk_Ras" type="radio" id="suitWet3-option" name="risk-wetlandSuit">
+			<div class="check"></div>
+			<span class="form-text">Runoff Flood Risk</span>
+		</label>
+		<div class="risk-rankingThresholdText">Land with high susceptibility to flood due to overflowing streams and/or precipitation run off, from the Dept of Agriculture. High is >= 50%, Medium is 10-50%, and Low is <=10%</div>
+		<br>
+		<label class="form-component" for="suitWet4-option">
+			<input disabled type="radio" value="coastalFlood" id="suitWet4-option" name="risk-wetlandSuit">
+			<div class="check"></div>
+			<span class="form-text">Coastal Flood Risk</span>
+		</label>
+		<div class="risk-rankingThresholdText">Estuarine land near projected flood extents is at highest risk of future flooding as sea levels rise. High = Within 500m of flood extent, Medium is within 500-1,000m, and Low is within 1,000-1,500m.</div>
+	</div>
+
+	
+	<div class="risk-waterRiseWrapper">
+		<h4 class="risk-resultsLabel" style="margin-top: 7px;">Change coastal flood scenario.</h4>
+		<!-- <div id="viewChangeText" class="risk-viewChangeText">View Change Scenarios</div> -->
+		<div id="yearSliderWrapper" class="risk-yearSliderWrapper">
+			<div class="risk-sliderLabel">Water Rise:</div>
+			<div class="slider-container" style="width:185px; margin-left: 30px;">
+				<div id="sldr" class="slider"></div>
+				<div class="risk-yearLabelsWrapper">
+					<div class="risk-yearLabels" style="margin-left: -14px;">0.5m</div>
+					<div class="risk-yearLabels">0.8m</div>
+					<div class="risk-yearLabels">1.1m</div>
+					<div class="risk-yearLabels">1.5m</div>
 				</div>
 			</div>
-
 		</div>
-	</section>
-	
-	<!-- Supporting data wrapper ///////////////////////////////////////////////////////////////////////////////////////// -->
-	<section>
-		<h3 style="margin-top: 15px;">Supporting Data:</h3>
-		<div class="aus-supDataWrap" id="aus-supDataWrap">
-			<label class="form-component" for="sup2">
-				<input type="radio" id="sup2" name="sup" class="rb_cb" value="Exposure">
-				<div class="check"></div>
-				<span class="form-text">Exposure</span>
-			</label>
-			<br>
-			<label class="form-component" for="sup3">
-				<input  type="radio" id="sup3" name="sup" class="rb_cb" value="Slope">
-				<div class="check"></div>
-				<span class="form-text">Slope</span>
-			</label>
-			<br>
-			<label class="form-component aus-supLabel" for="sup4">
-				<input  type="radio" id="sup4" name="sup" class="rb_cb" value="Marsh and/or Mangrove Presence">
-				<div class="check"></div>
-				<span class="form-text">Marsh and/or Mangrove Presence</span>
-			</label>
-			<br>
-			<label class="form-component aus-supLabel" for="sup5">
-				<input  type="radio" id="sup5" name="sup" class="rb_cb" value="Beach Presence">
-				<div class="check"></div>
-				<span class="form-text">Beach Presence</span>
-			</label>
-			<br>
-			<label class="form-component" for="sup1">
-				<input type="radio" id="sup1" name="sup" class="rb_cb" value="None">
-				<div class="check"></div>
-				<span class="form-text">None</span>
-			</label>
-		</div>
-	</section>
-	
-</div>
-
-<!-- Download data Wrapper //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- <div id="aus-downloadData" class="aus-easWrap aus-sections hide">
-	<div id="aus-downloadDiv" class="aus-dlwrap">
-		<h4>The download package contains:</h4>
-		<p id="allParLink">&#8226; Report (<a id="-_AllParcels.pdf" target="_blank">preview</a>)</p>
-		<p id="sbLinksbLink">&#8226; Map of selected wetlands (<a id="-_Setbacks.pdf" target="_blank">preview</a>)</p>
-		<p id="ceosLink">&#8226; All Geospatial Data (Ranked HUCs) </p>
-		<p id="larParLink">&#8226; Map(s) of the 10 largest OSP eligible parcels (<a id="-_Parcels_Large.pdf" target="_blank">preview</a>)</p>
-		<p id="csvDesc">&#8226; CSV file of OSP eligible parcel attributes</p>
-		<div style="margin-top:12px;"><button class="button button-primary" id="dlBtn">Download</button></div>
 	</div>
+	
+
+	<!-- site opacity slider -->
+	<div class="risk-opacitySlider">
+
+		<div style="margin-top: -10px; margin-right: 15px; color: rgb(44, 98, 133)"><b>Opaque</b></div>
+		<div class=" slider-container range-slider" style="width:200px;">
+			<div id="opacity-slider" class="slider"></div>
+		</div>
+		<div style="margin-top: -10px; margin-left: 15px; color: rgb(44, 98, 133) "><b>Transparent</b></div>
+	</div>
+	<!-- <div class="risk-floodText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div> -->
+
+
+
+	<!-- <div id="riseSliderWrapper" class="risk-riseSliderWrapper">
+		<div class="risk-sliderLabel">Sea Level Rise:</div>
+		<div class="slider-container" style="width:185px; margin-left: 30px;">
+			<div id="sldr2" class="slider"></div>
+			<div class="risk-riseLabelsWrapper">
+				<div class="risk-riseLabels" style="margin-left: -14px;">High</div>
+				<div class="risk-riseLabels">Medium</div>
+				<div class="risk-riseLabels">Low</div>
+			</div>
+		</div>
+	</div>
+	<div class="risk-floodText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+	<div class="risk-flowToggleWrapper">
+		<h4 class="risk-resultsLabel" style="margin-top: 7px; font-size: 14px;">Seasonal River Flow:</h4>
+		<div class="toggle-btn" style="width:250px; margin-left: 10px;">
+			<input checked="true" type="radio" id="flow1" name="flow" value="low"/>
+			<label for="flow1">Low</label>
+			<input type="radio" id="flow2" name="flow" value="high"/>
+			<label for="flow2">High</label>
+		</div>
+	</div>
+	<div class="risk-floodText">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+	<div class="risk-floodToggleWrapper">
+		<h4 class="risk-resultsLabel" style="margin-top: 7px; font-size: 14px;">Flood Event:</h4>
+		<div class="toggle-btn" style="width:250px; margin-left: 10px;">
+			<input checked="true" type="radio" id="flood1" name="flood" value="10"/>
+			<label for="flood1">10 Year</label>
+			<input type="radio" id="flood2" name="flood" value="100"/>
+			<label for="flood2">100 Year</label>
+		</div>
+	</div>
+	<div class="risk-floodText" style="margin-bottom: 15px;">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
 </div> -->
 
-<!-- Info Wrapper //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- <div id="aus-showInfo" class="aus-sections hide">
-	<section style="height: 250px;">
-		<h2>Documentation</h2>
-		<h3 class="elemInfo">Australia Atrribute Descriptions</h3>
-		<div id="exwrap" class="explainWrap">
-			<h4 class="ccInfo">Fish and aquatic habitat</h4>
-			<p id="ccInfo" class="ccInfo">Fish and aquatic habitat text placeholder Lorem ipsum dolor sit amet, leo et nunc ac. Nunc tincidunt vivamus, in suscipit lectus est quia magnis diam. Et non rutrum elit eget leo tempus, mauris pellentesque fringilla ante sed vestibulum vel, consequat morbi tincidunt aliquam, at duis possimus nulla. Netus diam et phasellus ut adipiscing, duis in vel</p>
-			<h4 class="cndInfo">Flood Abatement</h4> 
-			<p id="cndInfo" class="cndInfo">Flood abatement help text placeholder Lorem ipsum dolor sit amet, leo et nunc ac. Nunc tincidunt vivamus, in suscipit lectus est quia magnis diam. Et non rutrum elit eget leo tempus, mauris pellentesque fringilla ante sed vestibulum vel, consequat morbi tincidunt aliquam, at duis possimus nulla. Netus diam et phasellus ut adipiscing, duis in vel</p>
-			<h4 class="iasInfo">Nitrogen</h4>
-			<p id="iasInfo" class="iasInfo">Nitrogen placeholder text Lorem ipsum dolor sit amet, leo et nunc ac. Nunc tincidunt vivamus, in suscipit lectus est quia magnis diam. Et non rutrum elit eget leo tempus, mauris pellentesque fringilla ante sed vestibulum vel, consequat morbi tincidunt aliquam, at duis possimus nulla. Netus diam et phasellus ut adipiscing, duis in vel</p>
-			<h4 class="ospInfo">Sediment and Phosphorous</h4>
-			<p class="ospInfo">Sediment and Phosphorous text placeholder Lorem ipsum dolor sit amet, leo et nunc ac. Nunc tincidunt vivamus, in suscipit lectus est quia magnis diam. Et non rutrum elit eget leo tempus, mauris pellentesque fringilla ante sed vestibulum vel, consequat morbi tincidunt aliquam, at duis possimus nulla. Netus diam et phasellus ut adipiscing, duis in vel</p>
-		</div>
-	</section>
-</div> -->
