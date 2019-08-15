@@ -39,6 +39,7 @@ function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, obj, conte
 			}else{
 				ga('send', 'event', this.toolbarName, 'Re-opened app');
 				this.dynamicLayer.setVisibleLayers(this.obj.visibleLayers);
+				this.map.setExtent(this.dynamicLayer.fullExtent.expand(1.2), true)
 				$('#' + this.id).parent().parent().css('display', 'flex');
 				// this.clicks.updateAccord(this);
 			}
